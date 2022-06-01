@@ -29,3 +29,17 @@ steps:
     arguments:
       ANNOTATION_NAME: '${{CF_BRANCH}}'
 ```
+
+
+### How to use it
+- This custom step creates a new `Build parameter` which can be referenced later by implementing the following example:
+
+```
+  Test:
+    title: Test
+    stage: "version"
+    image: alpine
+    shell: bash
+    commands:
+      - echo ${CF_BUILD_NUMBER}
+```
